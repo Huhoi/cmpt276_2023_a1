@@ -1,0 +1,147 @@
+.container{
+    display: grid;
+    grid-template-columns: 375px 450px;
+    grid-template-rows: 375px 250px;
+    gap: 10px;
+    
+}
+
+.top{
+    font-size: 24px;
+    color: black;
+    margin-bottom: 0px;
+
+}
+
+.lowerBound{
+    grid-column: 1;
+    grid-row: 1 / 3 ;
+    
+}
+
+.histogram{
+    grid-column: 2;
+    grid-row: 1 / 2 ;
+    
+}
+
+.newgrade{
+    grid-column: 2;
+    grid-row: 2 / 3;
+    
+    height: 207px;
+    
+}
+
+h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h2{
+    font-size: 17px;
+    color: rgb(199, 12, 12);
+    margin-top: 15px 15px;
+    padding-left: 10px;
+    position: absolute;
+    z-index: +1;
+      
+}
+
+form {
+    display: table;
+    border: none;
+    background-color: #d6e6eb;
+    
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-top: 40px;
+    
+    height: 90%;
+    width: 335px;
+    align-items: center;
+
+
+}
+
+p{
+    display: table-row;
+}
+
+table{
+    table-layout: fixed;
+    padding-top: 30px;
+    padding-left: 40px;
+    width: 375px;
+    height: 375px;
+    background-color: #d6e6eb;
+    
+}
+
+td{
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 0px;
+    white-space: nowrap;
+}
+
+
+
+.grade_table td:nth-child(2){
+    padding-right: 10px;
+    
+}
+
+input[type=submit]{
+    text-align: center;
+    border-radius: 5px;
+}
+
+input[type=number]{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#newgradename{
+    margin-right: 50px;
+    position: relative;
+    right: 25px;
+    bottom: 30px;
+    width: 80px;
+}
+
+#newgrade{
+    width: 160px;
+    position: relative;
+    right: 50px;
+    bottom: 30px;
+
+}
+
+#button{
+    border: 1px solid black;
+    border-radius: 3px;
+    position: relative;
+    left: 130px;
+    bottom: 57px;
+
+
+}
+
+
+
+label{
+    display:table-cell;
+
+
+}
+
+input{
+    text-align: right;
+    height: 25px;
+    width:  75px;
+    margin-left: 35px;
+    border: 1px solid gray;
+    border-radius: 1.5px;
+
+    
+}

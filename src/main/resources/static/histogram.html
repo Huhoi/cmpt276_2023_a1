@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram Generator</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/calculate.js" defer></script>
+</head>
+
+<body>
+    <main id="top">
+        <h1>Histogram Generator</h1>
+
+
+        <div class="container">
+            <div class="lowerBound">
+                <h2>Lower Bounds</h2>
+                <form id="grade_bounds">
+                    <p>
+                        <label for="max">Max</label>
+                        <input 
+                            name="max" 
+                            id="max" 
+
+                            value="100.00" 
+                            type="number" 
+                            step="1.00"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="a_plus">A+</label>
+                        <input 
+                            name="a_plus" 
+                            id="a_plus" 
+                            value="95.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="a">A</label>
+                        <input 
+                            name="a" 
+                            id="a" 
+                            value="90.00" 
+                            type="number" 
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="a_minus">A-</label>
+                        <input 
+                            name="a_minus" 
+                            id="a_minus" 
+
+                            value="85.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="b_plus">B+</label>
+                        <input 
+                            name="b_plus" 
+                            id="b_plus" 
+                            value="80.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="b">B</label>
+                        <input 
+                            name="b" 
+                            id="b" 
+                            value="75.00" 
+                            type="number" 
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="b_minus">B-</label>
+                        <input 
+                            name="b_minus" 
+                            id="b_minus" 
+                            value="70.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="c_plus">C+</label>
+                        <input name="c_plus" 
+                            id="c_plus" 
+                            value="65.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="c">C</label>
+                        <input name="c" 
+                            id="c" 
+                            value="60.00" 
+                            type="number" 
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="c_minus">C-</label>
+                        <input name="c_minus" 
+                            id="c_minus" 
+                            value="55.00" 
+                            type="number"
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="d">D</label>
+                        <input name="d" 
+                            id="d" 
+                            value="50.00" 
+                            type="number" 
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                    <p>
+                        <label for="f">F</label>
+                        <input name="f" 
+                            id="f" 
+                            min="0" 
+                            value="0.00" 
+                            type="number" 
+                            onchange="lowerBoundCheck()"
+                            oninput="updateHistogram()">
+                    </p>
+                </form>
+            </div>
+
+            <div class="histogram">
+                <h2>Histogram</h2>
+                <table id="grades" class="grade_table">
+                    <tr>
+                        <td>A+</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>A-</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>B+</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>B-</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>C+</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>C-</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td> </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div class="newgrade">
+                <form action="/submit" id="form2">
+                    <p>
+                        <label id="newgradename" for="newgrade">New Grade:</label>
+                        <input name="newgrade" id="newgrade" min="0" value="" type="number">
+                        <input class="btn btn-primary" id="button" type="submit" value="Submit">
+
+                    </p>
+                </form>
+
+            </div>
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>
