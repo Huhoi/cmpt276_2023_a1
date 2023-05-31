@@ -53,7 +53,7 @@ function updateHistogram(){
             if(parseFloat(grades[i]) > parseFloat(document.getElementById("max").value)){
                 max +=1
             }
-            else if(parseFloat(grades[i]) > parseFloat(document.getElementById("a_plus").value)){
+            else if(parseFloat(grades[i]) >= parseFloat(document.getElementById("a_plus").value)){
                 a_plus +=1
             }
             else if(parseFloat(grades[i]) >= parseFloat(document.getElementById("a").value)){
